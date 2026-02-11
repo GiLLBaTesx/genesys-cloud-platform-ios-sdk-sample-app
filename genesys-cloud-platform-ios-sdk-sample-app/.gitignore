@@ -1,0 +1,55 @@
+# Xcode
+.DS_Store
+*/build/*
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+profile
+*.moved-aside
+DerivedData
+*.hmap
+*.xccheckout
+*.xcworkspace
+!default.xcworkspace
+
+# CocoaPods
+Pods/
+!Podfile
+!Podfile.lock
+
+# Swift Package Manager
+.build/
+*.xcodeproj
+!default.xcodeproj
+.project
+.svn/
+
+# OS X
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Carthage
+Carthage/
+
+# Local Development Files
+.env
+.env.local
+secrets.json
+
+# App-specific
+*.log
+*.tmp
+*.ipa
+*.dSYM.zip

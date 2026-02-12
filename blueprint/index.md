@@ -2,6 +2,8 @@
 
 This Genesys Cloud Developer Blueprint demonstrates how to include the Genesys Cloud Platform API Client SDK for iOS in a SwiftUI project. This solution includes a sample iOS app that allows supervisors to monitor agent statuses, presence information, and queue assignments in real-time.
 
+![Flowchart](images/flowchart_1.png "Solution architecture flowchart")
+
 ## Solution components
 
 - **Genesys Cloud** - A suite of Genesys cloud services for enterprise-grade communications, collaboration, and contact center management. In this solution, you require a Genesys Cloud OAuth client to authorize the iOS app integration with Genesys Cloud.
@@ -17,7 +19,7 @@ This Genesys Cloud Developer Blueprint demonstrates how to include the Genesys C
 ### Specialized knowledge
 
 - Administrator-level knowledge of Genesys Cloud
-- Experience using the Genesys Cloud Platform API and the Genesys Cloud Platform API Client SDK for iOS
+- Familiarity with the Genesys Cloud Platform API and the Genesys Cloud Platform API Client SDK for iOS
 - Experience using Swift and SwiftUI
 - Familiarity with Xcode and CocoaPods
 
@@ -41,7 +43,9 @@ The blueprint includes a sample iOS app that uses the Genesys Cloud Platform API
 
 The app automatically refreshes every 30 seconds to provide live monitoring. Users can also manually refresh by pulling down on any view. If an agent's status changes, the display updates accordingly.
 
-The iOS project is created using SwiftUI with CocoaPods for dependency management. If you are using this as a reference for your existing iOS project, there can be differences in project structure and configuration.
+:::primary
+**Note:** The iOS project is created using SwiftUI with CocoaPods for dependency management. If you are using this as a reference for your existing iOS project, there can be differences in project structure and configuration.
+:::
 
 ## Genesys Cloud service
 
@@ -89,11 +93,18 @@ You can run the sample iOS app locally using Xcode.
 5. Build and run the app in Xcode (⌘+R) on a simulator or physical device.
 
 6. When the app launches, enter your OAuth credentials in the Setup tab:
+
+   ![Setup Screen](images/Screenshot%201.png "Enter OAuth credentials in the Setup tab")
+
    - **Environment**: Your Genesys Cloud environment base path (e.g., `https://api.mypurecloud.com`, `https://api.mypurecloud.ie`, `https://api.mypurecloud.com.au`)
    - **Client ID**: Your OAuth client ID
    - **Client Secret**: Your OAuth client secret
 
 7. Tap "Start Agent Monitoring" to authenticate and begin monitoring agents.
+
+   ![Setup Screen](images/Screenshot%202.png "Once the OAuth Credentials are authenticated the button will be enabled")
+
+   ![Dashboard View](images/Screenshot%203.png "Dashboard showing real-time agent statistics")
 
 ## Implementation steps
 
@@ -248,7 +259,7 @@ PresenceAPI.getUserPresence(userId: userId, sourceId: "PURECLOUD") { (userPresen
 
 **Problem:** "Invalid Client ID or Secret" error
 
-**Solution:**
+**Solutions:**
 - Verify your Client ID and Client Secret are correct
 - Ensure there are no extra spaces when copying credentials
 - Confirm the OAuth client is active in Genesys Cloud Admin
@@ -313,12 +324,7 @@ PresenceAPI.getUserPresence(userId: userId, sourceId: "PURECLOUD") { (userPresen
 **Problem:** "API endpoint not found" or "404" errors
 
 **Solution:**
-- Verify you're using the correct environment URL for your region:
-  - US East: `https://api.mypurecloud.com`
-  - EU (Ireland): `https://api.mypurecloud.ie`
-  - Asia Pacific (Sydney): `https://api.mypurecloud.com.au`
-  - EU (Frankfurt): `https://api.mypurecloud.de`
-  - Asia Pacific (Tokyo): `https://api.mypurecloud.jp`
+- Verify you're using the correct environment URL for your region. For a complete list of Genesys Cloud regions and their corresponding URLs, see [AWS regions for Genesys Cloud deployment](https://help.mypurecloud.com/articles/aws-regions-for-genesys-cloud-deployment/) in the Genesys Cloud Resource Center.
 - Ensure the login URL matches your API URL (replace `api.` with `login.`)
 
 ## Additional resources

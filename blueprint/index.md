@@ -172,7 +172,9 @@ For more information, see [Create an OAuth client](https://help.mypurecloud.com/
    open YourAppName.xcworkspace
    ```
 
+   :::primary
    **Important:** Always use the .xcworkspace file when working with CocoaPods, not the .xcodeproj file.
+   :::
 
 ### Import the Genesys Cloud Platform API Client SDK for iOS into your project
 
